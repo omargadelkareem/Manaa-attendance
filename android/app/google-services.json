@@ -1,0 +1,87 @@
+{
+  "project_info": {
+    "project_number": "158091803534",
+    "firebase_url": "https://manaa-hr-system-default-rtdb.firebaseio.com",
+    "project_id": "manaa-hr-system",
+    "storage_bucket": "manaa-hr-system.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158091803534:android:b83675cf0a4a687f6d02df",
+        "android_client_info": {
+          "package_name": "com.example.manaa_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNGgjinUb-jUZYNd_t2QIDybqofoPXW70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158091803534:android:b4a11e4c119e74986d02df",
+        "android_client_info": {
+          "package_name": "com.example.manaa_attendance"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNGgjinUb-jUZYNd_t2QIDybqofoPXW70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158091803534:android:8c21873eda4a25b46d02df",
+        "android_client_info": {
+          "package_name": "com.example.manaa_company"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNGgjinUb-jUZYNd_t2QIDybqofoPXW70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158091803534:android:971fb5d711a92d2f6d02df",
+        "android_client_info": {
+          "package_name": "com.example.manaa_hr_employee"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNGgjinUb-jUZYNd_t2QIDybqofoPXW70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
