@@ -333,6 +333,31 @@ class AttendanceService {
 
   }) async {
 
+    // New dashboard geofence system.
+    // employees/{firebaseKey}/attendance_location_id -> attendance_locations/{id}
+    final attendanceLocationId = _readString(
+      employee,
+      [
+        'attendance_location_id',
+        'attendanceLocationId',
+      ],
+    );
+
+    if (attendanceLocationId.isNotEmpty) {
+      final assignedLocation = await _getAssignedAttendanceLocation(
+        attendanceLocationId,
+      );
+
+      if (assignedLocation != null) {
+        return assignedLocation;
+      }
+
+      throw const AttendanceException(
+        code: 'ASSIGNED_LOCATION_INVALID',
+        message: 'موقع البصمة المخصص للموظف غير متاح أو غير صالح. تواصل مع الإدارة.',
+      );
+    }
+
     final employeeCode = _readString(
 
       employee,
@@ -549,6 +574,37 @@ class AttendanceService {
 
 
 
+
+
+
+  static Future<AttendanceLocation?> _getAssignedAttendanceLocation(
+    String locationId,
+  ) async {
+    try {
+      final snapshot = await _database
+          .ref('attendance_locations/$locationId')
+          .get();
+
+      if (!snapshot.exists) {
+        return null;
+      }
+
+      final data = _asMap(snapshot.value);
+
+      if (data.isEmpty || !_isLocationEnabled(data)) {
+        return null;
+      }
+
+      return _parseLocation(
+        data,
+        sourceName: 'attendance_location',
+        referenceId: locationId,
+        fallbackName: 'موقع البصمة',
+      );
+    } catch (_) {
+      return null;
+    }
+  }
 
 
 
